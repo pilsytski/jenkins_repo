@@ -13,17 +13,15 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                powershell 'Write-Output "Hello, this is a first step!!'
+                powershell 'Write-Output "Hello, this is a first step!!!!!'
             }
         }
         stage("Second step") {
             steps {
-                powershell 'Write-Output "Hello,this is a second step!!!'
+                powershell 'Write-Output "Hello,this is a second step!!!!!'
             }
+
        
         }
-        
-       
-        
     }
 }
