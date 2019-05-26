@@ -28,7 +28,10 @@ pipeline {
         }
         stage("Four step check MAVEN version") {
             steps {
-                sh 'mvn -version'
+                echo "Hello World!"
+                sh "echo Hello from the shell"
+                sh "hostname"
+                sh "uptime"
             }
         }
     }
