@@ -22,11 +22,8 @@ pipeline {
             }
        
         }
-        stage("Third step") {
-            steps {
-                powershell 'Write-Output "Hello,this is a THIRD step!!!'
-            }
+        
        
-        }
+        
     }
 }
