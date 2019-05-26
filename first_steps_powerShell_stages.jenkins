@@ -48,7 +48,13 @@ pipeline {
               steps{
                   
                   bat """
-                    ROBOCOPY  /MIR "D:/JavaSpring/SpringExample/target" "D:/JavaSpring/SpringExample/Deploy EXIT /B 0"
+                    ROBOCOPY  /MIR "D:/JavaSpring/SpringExample/target" "D:/JavaSpring/SpringExample/Deploy"
+                    echo robocopy exit code: %ERRORLEVEL%
+                    if %ERRORLEVEL% GTR 3 ( echo robocopy ERROR )
+                    if %ERRORLEVEL% GTR 3 ( exit %ERRORLEVEL% )
+                    set ERRORLEVEL=0
+                    
+                    
                       """
               }
           }  
