@@ -1,0 +1,25 @@
+#!groovy
+// Check ub1 properties
+properties([disableConcurrentBuilds()])//don't enable concurent build,only on build pice a time
+
+pipeline {
+    agent { 
+        label 'master'   //agent for will used for master branch
+        }
+    options {  //buildDiscarder discard 
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))//save logs for last 10 builds and 10 last artifacst
+        timestamps() //out in visual interface we want see time stamps
+    }
+    stages {
+        stage("First step") {
+            steps {
+                sh 'ssh root@ub1 \'hostname\''  //in shell run command that says "say what is you hostname"
+            }
+        }
+        stage("Second step") {
+            steps {
+                sh 'ssh root@ub1 \'uptime\''  //in shell run command that says "how much machine is up time"
+            }
+        }
+    }
+}
