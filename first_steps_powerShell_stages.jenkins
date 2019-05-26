@@ -23,7 +23,7 @@ pipeline {
 
        stage("Third  step") {
             steps {
-                powershell 'ipconfig google.co.il'
+                powershell 'Get-NetIPConfiguration"'
             }
         }
     }
