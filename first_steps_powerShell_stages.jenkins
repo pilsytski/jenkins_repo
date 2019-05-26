@@ -26,6 +26,11 @@ pipeline {
                 powershell 'Get-Service | Where-Object {$_.Status -eq "Running"}'
             }
         }
+        stage("Four step check MAVEN version") {
+            steps {
+                bat 'mvn -version'
+            }
+        }
     }
 
  post {
