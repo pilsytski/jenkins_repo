@@ -36,11 +36,23 @@ pipeline {
                 cd %DEVELOPMENT_HOME%
                 call mvn -version
                 call mvn -f D:/JavaSpring/SpringExample/pom.xml clean install -U
+                
                 """
                 
             
             }
         }
+        stage("Copy JAR file to Deploy folder){
+              
+              
+              steps{
+                  
+                  bat """
+                    ROBOCOPY  /MIR "D:/JavaSpring/SpringExample/target" "D:/JavaSpring/SpringExample/Deploy"
+                      """
+              }
+          }  
+         
     }
 
  post {
@@ -49,9 +61,7 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
-            bat """
-            ROBOCOPY  /MIR "D:/JavaSpring/SpringExample/target" "D:/JavaSpring/SpringExample/Deploy"
-                """
+            
         }
         failure {
             echo 'This will run only if failed'
