@@ -35,8 +35,9 @@ pipeline {
                 }  
                 else {
                 bat """
-                chdir /C C:\Program Files\Maven\apache-maven-3.6.1\bin
-                mvn -version
+                SET DEVELOPMENT_HOME=C:\Program Files\Maven\apache-maven-3.6.1\bin
+                cd %DEVELOPMENT_HOME%
+                call mvn -version
                 """
                 }
             
