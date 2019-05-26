@@ -50,7 +50,7 @@ pipeline {
         success {
             echo 'This will run only if successful'
             bat """
-            ROBOCOPY "D:/JavaSpring/SpringExample/target/*.jar" "D:/JavaSpring/SpringExample/Deploy"
+            ROBOCOPY  /MIR "D:/JavaSpring/SpringExample/target" "D:/JavaSpring/SpringExample/Deploy"
                 """
         }
         failure {
