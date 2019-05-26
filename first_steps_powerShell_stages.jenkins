@@ -28,7 +28,7 @@ pipeline {
         }
         stage("Four step check MAVEN version") {
             steps {
-                bat 'echo %PATH%'
+                bat 'call mvn --version'
             
             }
         }
