@@ -28,7 +28,7 @@ pipeline {
         }
         stage("Four step check MAVEN version") {
             steps {
-                echo "Hello World from FOUR Stage"
+                bat 'echo %PATH%'
             
             }
         }
