@@ -42,7 +42,7 @@ pipeline {
             
             }
         }
-        stage("Copy JAR file to Deploy folder){
+        stage("Copy JAR file to Deploy folder"){
               
               
               steps{
