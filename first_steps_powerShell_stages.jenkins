@@ -34,7 +34,10 @@ pipeline {
               sh "mvn install" 
                 }  
                 else {
-                bat "mvn -version"
+                bat """
+                cd C:\Program Files\Maven\apache-maven-3.6.1\bin
+                mvn --version
+                """
                 }
             
             }
