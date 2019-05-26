@@ -35,6 +35,7 @@ pipeline {
                 set "DEVELOPMENT_HOME=C:/%PROGFILES%/Maven/apache-maven-3.6.1/bin"
                 cd %DEVELOPMENT_HOME%
                 call mvn -version
+                call mvn -f D:/JavaSpring/SpringExample/pom.xml clean install -U
                 """
                 
             
