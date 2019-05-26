@@ -35,8 +35,8 @@ pipeline {
                 }  
                 else {
                 bat """
-                cd C:\Program Files\Maven\apache-maven-3.6.1\bin
-                mvn --version
+                chdir /C C:\Program Files\Maven\apache-maven-3.6.1\bin
+                mvn -version
                 """
                 }
             
