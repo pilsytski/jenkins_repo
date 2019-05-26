@@ -48,7 +48,7 @@ pipeline {
               steps{
                   
                   bat """
-                    ROBOCOPY  /MIR "D:/JavaSpring/SpringExample/target" "D:/JavaSpring/SpringExample/Deploy"
+                    ROBOCOPY  /MIR "D:/JavaSpring/SpringExample/target" "D:/JavaSpring/SpringExample/Deploy EXIT /B 0"
                       """
               }
           }  
