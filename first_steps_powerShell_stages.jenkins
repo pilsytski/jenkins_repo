@@ -21,10 +21,7 @@ pipeline {
                 powershell 'Write-Output "Hello,this is a second step!!!"'
             }
 
-       stage("Third  step") {
-            steps {
-                powershell 'Get-NetIPConfiguration"'
-            }
+       
         }
     }
 }
