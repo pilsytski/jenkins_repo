@@ -28,19 +28,15 @@ pipeline {
         }
         stage("Four step check MAVEN version") {
             steps {
-                 def os = System.properties['os.name'].toLowerCase()
-                 echo "OS: ${os}"
-              if (os.contains("linux")) {
-              sh "mvn install" 
-                }  
-                else {
+             
+                
                 bat """
                 set PROGFILES="Program Files"
                 set "DEVELOPMENT_HOME=C:/%PROGFILES%/Maven/apache-maven-3.6.1/bin"
                 cd %DEVELOPMENT_HOME%
                 call mvn -version
                 """
-                }
+                
             
             }
         }
