@@ -13,12 +13,17 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                powershell 'Write-Output "Hello, thi is a first step!!"'
+                powershell 'Write-Output "Hello, this is a first step!!"'
             }
         }
         stage("Second step") {
             steps {
                 powershell 'Write-Output "Hello,this is a second step!!!"'
+            }
+
+       stage("Third  step") {
+            steps {
+                powershell 'ipconfig google.co.il'
             }
         }
     }
