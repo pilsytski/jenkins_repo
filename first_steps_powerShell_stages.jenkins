@@ -24,7 +24,7 @@ pipeline {
         }
         stage("Third step") {
             steps {
-                powershell 'Get-Service | Where-Object {$_.Status -eq "Running"}'
+                powershell 'Write-Output "Hello,this is a THIRD step!!!'
             }
        
         }
