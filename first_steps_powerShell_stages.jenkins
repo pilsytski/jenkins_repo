@@ -36,7 +36,6 @@ pipeline {
                 cd %DEVELOPMENT_HOME%
                 call mvn -version
                 call mvn -f D:/JavaSpring/SpringExample/pom.xml clean install -U
-                xcopy /s D:/JavaSpring/SpringExample/target/*.jar  C:\Program Files (x86)\Jenkins\workspace\first_jenkins_pipeline
                 """
                 
             
@@ -50,6 +49,9 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
+            bat """
+            xcopy /s D:/JavaSpring/SpringExample/target/*.jar  C:\Program Files (x86)\Jenkins\workspace\first_jenkins_pipeline
+                """
         }
         failure {
             echo 'This will run only if failed'
