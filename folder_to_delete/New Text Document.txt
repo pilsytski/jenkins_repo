@@ -1,0 +1,1 @@
+just check if jenkins will copu it to workspace folder
